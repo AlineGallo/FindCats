@@ -4,25 +4,10 @@ import { ref, onBeforeMount } from 'vue';
 import { FilterMatchMode } from '@primevue/core/api';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
-import MultiSelect from 'primevue/multiselect';
 import InputText from 'primevue/inputtext';
-import Tag from 'primevue/tag';
-import Select from 'primevue/dropdown'; // O correto para PrimeVue é "Dropdown", não "Select"
-import Checkbox from 'primevue/checkbox';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 
-const components = {
-  DataTable,
-  Column,
-  MultiSelect,
-  InputText,
-  Tag,
-  Select,
-  Checkbox,
-  IconField,
-  InputIcon
-};
 
 
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
