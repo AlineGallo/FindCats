@@ -4,6 +4,9 @@ import './assets/style.css'
 import App from './App.vue'
 import router from './router'
 
+// PrimeVue
+import PrimeVue from 'primevue/config';
+import Aura from '@primevue/themes/aura';
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -14,8 +17,14 @@ library.add(faMagnifyingGlass)
 
 const app = createApp(App)
 
+app.use(PrimeVue, {
+  theme: {
+      preset: Aura
+  }
+});
 app.use(createPinia())
 app.use(router)
+app.use(PrimeVue);
 
 app.component('font-awesome-icon', FontAwesomeIcon)
 
