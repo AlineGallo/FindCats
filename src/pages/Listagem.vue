@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import BreedsList from '@/shared/components/BreedsList.vue';
+import Header from '@/shared/components/Header.vue';
 </script>
 
 <template>
-  <main
-    class="w-full h-screen flex lg:items-center justify-center flex-col bg-gradient-to-tr from-purple-400 to-blue-400">
-    <p class="text-2xl m-4 text-center pt-4">Encontre seu gatinho!</p>
+  <main class="w-full h-screen flex lg:items-center flex-col bg-a_secondary">
+    <Header />
+
     <div class="p-4">
       <BreedsList />
     </div>
