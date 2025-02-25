@@ -4,7 +4,7 @@ import Header from '@/shared/components/Header.vue';
 </script>
 
 <template>
-  <main class="w-full h-screen flex lg:items-center flex-col bg-a_secondary">
+  <main class="w-full h-full flex lg:items-center flex-col bg-a_secondary">
     <Header />
 
     <div class="p-4">
