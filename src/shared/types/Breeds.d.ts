@@ -3,13 +3,6 @@ interface Weight {
   metric: string;
 }
 
-interface Image {
-  id: string;
-  width: number;
-  height: number;
-  url: string;
-}
-
 interface Breed {
   weight: Weight;
   id: string;
@@ -48,5 +41,4 @@ interface Breed {
   wikipedia_url?: string;
   hypoallergenic: number;
   reference_image_id: string;
-  image?: Image;
 }

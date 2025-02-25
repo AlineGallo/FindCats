@@ -28,8 +28,6 @@ onBeforeMount(async () => {
 });
 
 function detalhe(catID: number) {
-  console.log(catID)
-
   router.push({
     name: 'detalhes',
     query: {
