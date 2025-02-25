@@ -60,7 +60,7 @@ onBeforeMount(async () => {
         </Column>
         <Column header="Details">
           <template #body>
-            <button>
+            <button @click="$router.push({ name: 'detalhes' })">
               <font-awesome-icon :icon="['fas', 'magnifying-glass']"
                 class="text-gray-500 cursor-pointer hover:text-blue-500" />
             </button>
