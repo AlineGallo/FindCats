@@ -7,6 +7,9 @@ import Column from 'primevue/column';
 import InputText from 'primevue/inputtext';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const catStore = useCatStore()
 
@@ -23,6 +26,17 @@ onBeforeMount(async () => {
   breeds.value = catStore.breeds;
   console.log(breeds.value)
 });
+
+function detalhe(catID: number) {
+  console.log(catID)
+
+  router.push({
+    name: 'detalhes',
+    query: {
+      id: catID
+    },
+  });
+}
 
 </script>
 <template>
@@ -59,8 +73,8 @@ onBeforeMount(async () => {
           </template>
         </Column>
         <Column header="Details">
-          <template #body>
-            <button @click="$router.push({ name: 'detalhes' })">
+          <template #body="{ data }">
+            <button @click="detalhe(data.id)">
               <font-awesome-icon :icon="['fas', 'magnifying-glass']"
                 class="text-gray-500 cursor-pointer hover:text-blue-500" />
             </button>
