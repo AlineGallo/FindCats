@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCatStore } from '@stores/cat.store';
-import { ref, onBeforeMount } from 'vue';
+import { ref, onBeforeMount, onMounted } from 'vue';
 import { FilterMatchMode } from '@primevue/core/api';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
@@ -21,7 +21,19 @@ const loading = ref(false);
 
 const breeds = ref();
 
+const isDesktop = ref(window.innerWidth > 768);
+
+const checkScreenSize = () => {
+  isDesktop.value = window.innerWidth > 768;
+};
+
+onMounted(() => {
+  window.addEventListener('resize', checkScreenSize);
+});
+
 onBeforeMount(async () => {
+  window.removeEventListener('resize', checkScreenSize);
+
   await catStore.fetchBreeds()
   breeds.value = catStore.breeds;
   console.log(breeds.value)
@@ -70,6 +82,23 @@ function detalhe(catID: number) {
             {{ data.life_span }}
           </template>
         </Column>
+
+        <Column v-if="isDesktop" field="intelligence" header="Intelligence">
+          <template #body="{ data }">
+            {{ data.intelligence }}
+          </template>
+        </Column>
+        <Column v-if="isDesktop" field="affection_level" header="Affection Level">
+          <template #body="{ data }">
+            {{ data.affection_level }}
+          </template>
+        </Column>
+        <Column v-if="isDesktop" field="energy_level" header="Energy Level">
+          <template #body="{ data }">
+            {{ data.energy_level }}
+          </template>
+        </Column>
+
         <Column header="Details">
           <template #body="{ data }">
             <button @click="detalhe(data.id)">
