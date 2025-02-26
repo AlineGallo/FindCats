@@ -40,8 +40,8 @@ onBeforeMount(async () => {
         </div>
 
         <div class="w-full flex flex-col justify-center p-2">
-          <p class="text-center text-2xl">Description</p>
-          <p>{{ breed.description }}</p>
+          <p class="text-center text-2xl text-black">Description</p>
+          <p class="text-black">{{ breed.description }}</p>
         </div>
       </div>
 
