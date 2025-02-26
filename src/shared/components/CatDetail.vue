@@ -28,10 +28,11 @@ onBeforeMount(async () => {
     <div class="flex flex-col sm:flex-row p-4">
       <div class="sm:w-1/2">
         <div class="w-full flex justify-center">
-          <swiper ref="swiper" :pagination="true" :navigation="true" :modules="modules" class="w-80 h-64 rounded-lg">
+          <swiper ref="swiper" :pagination="true" :navigation="true" :modules="modules"
+            class="sm:w-[600px] sm:h-[400px] h-64 w-80 rounded-lg">
             <swiper-slide v-for="(image, index) in images" :key="index">
               <div class="flex justify-center items-center">
-                <img :src="image" alt="" class="rounded-lg h-72 w-96" />
+                <img :src="image" alt="" class="rounded-lg sm:w-[600px] sm:h-[400px] h-64 w-80" />
               </div>
               <br>
             </swiper-slide>
@@ -39,7 +40,7 @@ onBeforeMount(async () => {
         </div>
 
         <div class="w-full flex flex-col justify-center p-2">
-          <p class="text-center text-2xl">Detalhes</p>
+          <p class="text-center text-2xl">Description</p>
           <p>{{ breed.description }}</p>
         </div>
       </div>
