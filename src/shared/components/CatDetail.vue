@@ -125,7 +125,8 @@ onBeforeMount(async () => {
     </div>
 
     <div class="w-full flex justify-center mt-auto p-4">
-      <button class="bg-a_secondary text-white px-6 py-3 rounded-lg shadow-lg hover:bg-a_primary">
+      <button @click="$router.push('/listagem')"
+        class="bg-a_secondary text-white px-6 py-3 rounded-lg shadow-lg hover:bg-a_primary">
         Voltar
       </button>
     </div>
