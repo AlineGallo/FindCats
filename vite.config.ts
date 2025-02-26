@@ -18,4 +18,12 @@ export default defineConfig({
       '@stores': fileURLToPath(new URL('./src/shared/stores', import.meta.url))
     },
   },
+  build: {
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name][extname]', // Mantém o nome original do arquivo
+      },
+    },
+  },
 })
